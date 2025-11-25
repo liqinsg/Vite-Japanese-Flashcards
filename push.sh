@@ -27,5 +27,5 @@ fi
 # Git commands
 git add .
 git commit -m "$COMMIT_MSG"
-git push origin main
+git push origin master
 npm run deploy
