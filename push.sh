@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 # Default commit message
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 DEFAULT_MSG="some changes"
 # Check for the -m option
 while getopts "m:" opt; do
@@ -27,5 +28,7 @@ fi
 # Git commands
 git add .
 git commit -m "$COMMIT_MSG"
-git push origin master
+# git push origin main
+git push origin "$BRANCH_NAME"
+
 npm run deploy
